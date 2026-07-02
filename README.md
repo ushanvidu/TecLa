@@ -1,25 +1,48 @@
-# CODING AGENTS: READ THIS FIRST
+# TecLa
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Marketing site for TecLa (software, web, and AI engineering studio). A dark,
+Apple-caliber landing page with a live Three.js hero, scroll-reveal
+animations, a draggable culture photo strip, and a testimonials carousel —
+implemented as a MERN app from the Claude Design handoff in `project/`.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Stack
 
-## What you should do — IMPORTANT
+- **Client**: React + TypeScript + Vite (`client/`)
+- **Server**: Express + TypeScript + Mongoose/MongoDB (`server/`)
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+## Setup
 
-**Read `project/TecLa.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+```bash
+npm install          # installs client + server workspaces
+cp server/.env.example server/.env   # then edit MONGODB_URI if needed
+```
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Run in development
 
-## About the design files
+```bash
+npm run dev:server   # starts the API on :4000 (needs MongoDB running)
+npm run dev:client   # starts Vite on :5173, proxies /api to :4000
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+Open http://localhost:5173.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Build for production
 
-## Bundle contents
+```bash
+npm run build        # builds server (tsc) then client (vite build)
+npm run --workspace server start   # serve the built API
+```
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `TecLa Website Design` project files (HTML prototypes, assets, components)
+Serve `client/dist` as static assets (e.g. behind the same host as the API,
+or a CDN) in production.
+
+## Notes
+
+- Photos are hotlinked from Unsplash, matching the original design mockup.
+  Swap them for real team/office/client photography before launch.
+- Testimonial names/quotes and Featured Work project names are placeholders
+  from the design — replace with real ones when available.
+- `POST /api/contact` validates the email and stores a `ContactRequest`
+  document in MongoDB.
+- The original Claude Design export (HTML/CSS/JS prototype + chat transcript)
+  is kept in `project/` and `chats/` for reference.

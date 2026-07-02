@@ -1,0 +1,34 @@
+.tl-marquee-sec {
+  position: relative;
+  padding: 30px 0 10px;
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  overflow: hidden;
+}
+.tl-marquee-label {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 2.5px;
+  color: var(--text-mono-dim);
+  margin-bottom: 26px;
+}
+.tl-marquee-mask {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.tl-marquee-track {
+  display: flex;
+  gap: 72px;
+  width: max-content;
+  animation: tl-marquee 26s linear infinite;
+  padding-bottom: 24px;
+}
+.tl-marquee-item {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  color: #4c6157;
+}

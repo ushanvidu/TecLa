@@ -1,0 +1,99 @@
+:root {
+  --bg: #05090b;
+  --text: #e8f2ec;
+  --text-dim: #a9beb2;
+  --text-dim-2: #8fa69a;
+  --text-dim-3: #93a89c;
+  --text-faint: #8a9e93;
+  --text-mono-dim: #5e7368;
+  --heading: #f5fcf8;
+  --heading-2: #f3faf5;
+
+  --accent: #16a34a;
+  --accent-rgb: 22, 163, 74;
+  --accent-light: #57bd7d;
+  --accent-light-rgb: 87, 189, 125;
+  --accent-deep: #0d5f2b;
+  --accent-deep-rgb: 13, 95, 43;
+  --accent-ink: #05231a;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Sora', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+@keyframes tl-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes tl-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes tl-pulse {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+@keyframes tl-glow {
+  0%, 100% { opacity: .55; }
+  50% { opacity: .9; }
+}
+@keyframes tl-bob {
+  0%, 100% { transform: translateY(0); opacity: .8; }
+  50% { transform: translateY(10px); opacity: .3; }
+}
+@keyframes tl-drift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -30px); }
+  100% { transform: translate(0, 0); }
+}
+
+.tl-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.tl-reveal.tl-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tl-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.tl-hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

@@ -1,0 +1,32 @@
+.tl-stats {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  background: linear-gradient(180deg, rgba(var(--accent-rgb), .03), transparent);
+}
+.tl-stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.tl-stat {
+  text-align: center;
+}
+.tl-stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1;
+  background: linear-gradient(120deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tl-stat-label {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--text-faint);
+}

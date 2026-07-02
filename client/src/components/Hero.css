@@ -1,0 +1,157 @@
+.tl-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 24px 90px;
+  overflow: hidden;
+}
+
+.tl-hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.tl-hero-glow-top {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), .16), rgba(5, 9, 11, 0) 62%);
+  z-index: 0;
+  animation: tl-glow 7s ease-in-out infinite;
+}
+
+.tl-hero-glow-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: 8%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(var(--accent-deep-rgb), .20), transparent 65%);
+  z-index: 0;
+  animation: tl-drift 16s ease-in-out infinite;
+}
+
+.tl-hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .028) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 45%, #000 20%, transparent 75%);
+}
+
+.tl-hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 9, 11, .35) 0%, transparent 25%, transparent 62%, var(--bg) 100%);
+}
+
+.tl-hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 940px;
+}
+
+.tl-hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: .98;
+  letter-spacing: -2.5px;
+  color: var(--heading);
+  margin-bottom: 26px;
+  text-wrap: balance;
+}
+.tl-hero-title-accent {
+  background: linear-gradient(120deg, var(--accent), var(--accent-light) 55%, var(--accent-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tl-hero-sub {
+  max-width: 620px;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.55;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+  text-wrap: pretty;
+}
+
+.tl-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.tl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .3s, background .25s, border-color .25s;
+}
+.tl-btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 10px 40px rgba(var(--accent-rgb), .35);
+}
+.tl-btn-primary:hover {
+  box-shadow: 0 14px 55px rgba(var(--accent-rgb), .5);
+}
+.tl-btn-ghost {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .14);
+  color: var(--text);
+  font-weight: 500;
+}
+.tl-btn-ghost:hover {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(var(--accent-rgb), .4);
+}
+
+.tl-hero-scroll {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.tl-hero-scroll-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  color: var(--text-mono-dim);
+}
+.tl-hero-scroll-line {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(var(--accent), transparent);
+  animation: tl-bob 2s ease-in-out infinite;
+}

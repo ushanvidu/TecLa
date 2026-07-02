@@ -1,0 +1,102 @@
+@import './shared.css';
+
+.tl-testimonials {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 120px 24px 90px;
+  text-align: center;
+}
+.tl-testimonials-eyebrow {
+  margin-bottom: 34px;
+}
+.tl-testimonials-viewport {
+  position: relative;
+  overflow: hidden;
+}
+.tl-testimonials-pointer-wrap {
+  touch-action: pan-y;
+}
+.tl-testimonials-track {
+  display: flex;
+  will-change: transform;
+  transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+.tl-testimonial-slide {
+  flex: 0 0 100%;
+  padding: 0 12px;
+}
+.tl-testimonial-slide blockquote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(23px, 3.2vw, 38px);
+  line-height: 1.3;
+  letter-spacing: -1px;
+  color: #edf6f0;
+  text-wrap: balance;
+  margin: 0 0 34px;
+}
+.tl-testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.tl-testimonial-author img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(var(--accent-rgb), .5);
+}
+.tl-testimonial-author-info {
+  text-align: left;
+}
+.tl-testimonial-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-2);
+}
+.tl-testimonial-role {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.tl-testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 40px;
+}
+.tl-testimonials-controls button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, .03);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  transition: border-color .25s, background .25s;
+}
+.tl-testimonials-controls button:hover {
+  border-color: rgba(var(--accent-rgb), .5);
+  background: rgba(var(--accent-rgb), .08);
+}
+.tl-testimonials-dots {
+  display: flex;
+  gap: 8px;
+}
+.tl-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .2);
+  cursor: pointer;
+  transition: width .3s, background .3s;
+  display: inline-block;
+}
+.tl-dot-active {
+  width: 26px;
+  background: var(--accent);
+}

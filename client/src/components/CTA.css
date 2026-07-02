@@ -1,0 +1,102 @@
+.tl-cta-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 120px;
+}
+.tl-cta-card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: clamp(50px, 8vw, 96px) 32px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(var(--accent-rgb), .22), transparent 60%),
+    linear-gradient(180deg, #0c1512, #08100d);
+  border: 1px solid rgba(var(--accent-rgb), .2);
+}
+.tl-cta-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 50% 30%, #000, transparent 70%);
+}
+.tl-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.tl-cta-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 5.5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: var(--heading);
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+.tl-cta-sub {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  margin-bottom: 36px;
+}
+.tl-cta-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.tl-cta-form input {
+  flex: 1;
+  min-width: 240px;
+  padding: 16px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, .04);
+  color: var(--heading-2);
+  font-size: 15px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color .25s;
+}
+.tl-cta-form input:focus {
+  border-color: rgba(var(--accent-rgb), .55);
+}
+.tl-cta-form button {
+  padding: 16px 32px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(var(--accent-rgb), .35);
+  transition: transform .2s, box-shadow .3s, opacity .2s;
+}
+.tl-cta-form button:disabled {
+  opacity: .7;
+  cursor: default;
+}
+.tl-cta-msg {
+  height: 18px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.tl-cta-msg-visible {
+  opacity: 1;
+}
+.tl-cta-msg-error {
+  color: #ff8080;
+}
