@@ -9,9 +9,9 @@ import './CTA.css';
 // 3. Create Email Template using variables: {{from_name}}, {{from_email}}, {{service}}, {{message}}
 //    Set "To Email" in the template to your inbox email
 // 4. Account → API Keys → copy Public Key below
-const EMAILJS_SERVICE_ID  = 'service_k39g98p';
-const EMAILJS_TEMPLATE_ID = 'template_hs06avh';
-const EMAILJS_PUBLIC_KEY  = 'nSNV-jvaES1KPDnFR';
+const EMAILJS_SERVICE_ID  = 'service_shqlhs8';
+const EMAILJS_TEMPLATE_ID = 'template_niy1tvl';
+const EMAILJS_PUBLIC_KEY  = 'GeHhGwpPu5aE3Ga3d';
 
 const WA_NUMBER = '94715367306';
 const WA_MSG    = encodeURIComponent("Hi TecLa! I'd like to discuss a project.");
@@ -46,12 +46,10 @@ export function CTA() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name:       form.name,
-          from_name:  form.name,
-          from_email: form.email,
-          reply_to:   form.email,
-          service:    form.service,
-          message:    form.message,
+          name:    form.name,
+          email:   form.email,
+          title:   form.service,
+          message: form.message,
         },
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
