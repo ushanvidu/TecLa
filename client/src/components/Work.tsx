@@ -65,6 +65,9 @@ function ProjectCard({ project }: { project: Project }) {
           }}
         />
         <div className="tl-work-image-gradient" />
+        <div className="tl-work-overlay">
+          <span className="tl-work-overlay-pill">View Case Study →</span>
+        </div>
       </div>
       <div className="tl-work-body">
         <p className={`tl-work-category tl-work-category-${project.categoryColor}`}>{project.category}</p>

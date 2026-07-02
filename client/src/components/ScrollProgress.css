@@ -1,0 +1,17 @@
+.tl-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 200;
+  pointer-events: none;
+}
+
+.tl-scroll-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #57bd7d);
+  transition: width 0.08s linear;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.6);
+}

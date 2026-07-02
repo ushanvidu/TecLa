@@ -1,0 +1,71 @@
+.tl-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #05090b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.tl-loader-out {
+  transform: translateY(-100%);
+}
+
+.tl-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.tl-loader-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  letter-spacing: -2.5px;
+  color: #f5fcf8;
+  opacity: 0;
+  animation: tl-load-logo-in 0.7s 0.2s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.tl-loader-logo span {
+  color: #16a34a;
+}
+@keyframes tl-load-logo-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tl-loader-bar-wrap {
+  width: 180px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: tl-load-fade-in 0.4s 0.7s forwards;
+}
+.tl-loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #16a34a, #57bd7d);
+  border-radius: 2px;
+  animation: tl-load-bar 1.3s 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes tl-load-bar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.tl-loader-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #5e7368;
+  opacity: 0;
+  animation: tl-load-fade-in 0.4s 0.9s forwards;
+}
+@keyframes tl-load-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

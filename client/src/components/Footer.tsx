@@ -35,7 +35,7 @@ export function Footer() {
       </div>
       <div className="tl-footer-bottom">
         <p>© 2026 TECLA. ALL RIGHTS RESERVED.</p>
-        <p>BUILT WITH THE MERN STACK</p>
+        <p>BUILT WITH REACT &amp; THREE.JS</p>
       </div>
     </footer>
   );
