@@ -63,3 +63,13 @@
     display: none;
   }
 }
+
+/* iOS safe area for the floating button */
+@supports (bottom: env(safe-area-inset-bottom)) {
+  .tl-wa {
+    bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+  }
+  @media (max-width: 480px) {
+    .tl-wa { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  }
+}

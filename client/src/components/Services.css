@@ -97,3 +97,16 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 760px) {
+  .tl-services { padding: 80px 20px 70px; }
+  .tl-service-text { padding: 28px 24px 32px; }
+  .tl-service-image { min-height: 240px; }
+}
+@media (max-width: 480px) {
+  .tl-services { padding: 60px 16px 56px; }
+  .tl-service-text { padding: 24px 20px 28px; }
+  .tl-service-text h3 { font-size: 24px; }
+  .tl-service-image { min-height: 200px; }
+}

@@ -129,3 +129,14 @@
   letter-spacing: 1.5px;
   color: var(--text-mono-dim);
 }
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 700px) {
+  .tl-culture { padding: 70px 0 70px; }
+  .tl-culture-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .tl-culture-figure { flex: 0 0 260px; height: 260px; }
+  .tl-culture-drag-label { align-self: flex-end; }
+}
+@media (max-width: 420px) {
+  .tl-culture-figure { flex: 0 0 220px; height: 220px; }
+}

@@ -22,8 +22,10 @@ export function mountHeroScene(canvas: HTMLCanvasElement): () => void {
   const camera = new THREE.PerspectiveCamera(55, w / h, 0.1, 100);
   camera.position.z = 6;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isMobile = w < 768;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
+  renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
   renderer.setSize(w, h, false);
 
   const accentMain  = new THREE.Color(theme.accent);
@@ -67,7 +69,7 @@ export function mountHeroScene(canvas: HTMLCanvasElement): () => void {
   scene.add(orbitRing);
 
   // ── Ambient particle field ────────────────────────────────────────────────
-  const N = 560;
+  const N = isMobile ? 160 : 560;
   const pos = new Float32Array(N * 3);
   const colors = new Float32Array(N * 3);
   for (let i = 0; i < N; i++) {

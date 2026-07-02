@@ -26,10 +26,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -38,6 +41,29 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+a, button, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* iOS safe-area padding for the page bottom */
+.tl-page {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .tl-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 a {

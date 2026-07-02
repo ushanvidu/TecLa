@@ -30,3 +30,19 @@
   font-size: 13.5px;
   color: var(--text-faint);
 }
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 700px) {
+  .tl-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    padding: 0;
+  }
+  .tl-stat {
+    padding: 36px 16px;
+    border: 1px solid rgba(255, 255, 255, .05);
+  }
+}
+@media (max-width: 380px) {
+  .tl-stat-value { font-size: 36px; }
+}

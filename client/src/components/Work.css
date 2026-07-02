@@ -116,3 +116,19 @@
   line-height: 1.55;
   color: #8fa69a;
 }
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 900px) {
+  .tl-work-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 580px) {
+  .tl-work { padding: 30px 20px 70px; }
+  .tl-work-grid { grid-template-columns: 1fr; }
+  .tl-work-image { height: 200px; }
+}
+/* No hover effects on touch — show overlay at rest instead */
+@media (hover: none) and (pointer: coarse) {
+  .tl-work-overlay { display: none; }
+  .tl-work-image img { transition: none; }
+  .tl-work-card:hover { transform: none; box-shadow: none; border-color: rgba(255,255,255,.07); }
+}

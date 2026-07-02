@@ -100,3 +100,12 @@
   width: 26px;
   background: var(--accent);
 }
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 640px) {
+  .tl-testimonials { padding: 70px 20px 60px; }
+  .tl-testimonial-slide blockquote {
+    font-size: clamp(18px, 5vw, 26px);
+    letter-spacing: -.5px;
+  }
+}
